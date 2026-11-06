@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FBC Bank Zimbabwe - Loan Approved</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; background-color: #0b1f3a; color: #1e293b; margin: 0; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-3 sm:p-6 lg:p-8">
+
+  <div class="w-full max-w-xl mx-auto my-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 flex flex-col">
+    <!-- Success Banner -->
+    <div class="bg-gradient-to-r from-emerald-600 via-teal-700 to-[#004bbd] px-6 py-8 text-white text-center">
+      <div class="w-16 h-16 mx-auto mb-3 rounded-full bg-white text-emerald-600 flex items-center justify-center font-black text-3xl shadow-lg ring-4 ring-white/30 animate-bounce">
+        &#10003;
+      </div>
+      <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold uppercase tracking-wider text-emerald-100 mb-2">
+        Official Sanction Granted
+      </span>
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-white">Loan Application Approved!</h1>
+      <p class="text-blue-100 text-xs sm:text-sm mt-1">
+        Congratulations <span id="clientName" class="font-bold text-white">Valued Client</span>, your loan facility has been sanctioned under FBC Bank retail terms.
+      </p>
+      <div class="mt-3 inline-block px-4 py-1.5 bg-black/20 backdrop-blur-md rounded-full text-xs font-mono">
+        Application Ref: <span class="font-bold text-emerald-300">FBC-ZW-2026-94812</span>
+      </div>
+    </div>
+
+    <!-- Summary Details -->
+    <div class="p-6 sm:p-8 space-y-5">
+      <div class="bg-blue-50/80 rounded-2xl p-5 border border-blue-200">
+        <div class="flex justify-between items-center pb-3 border-b border-blue-200/80">
+          <span class="text-xs text-slate-500 font-medium">Approved Principal Amount</span>
+          <span class="text-2xl font-black text-[#004bbd]" id="approvedAmount">$5,000.00</span>
+        </div>
+        <div class="grid grid-cols-2 gap-3 pt-3 text-xs">
+          <div>
+            <span class="text-slate-500 block">Annual Interest</span>
+            <span class="font-bold text-emerald-700">5.00% p.a. (Fixed)</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Repayment Period</span>
+            <span class="font-bold text-slate-800" id="approvedPeriod">24 Months</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Monthly Repayment</span>
+            <span class="font-bold text-[#004bbd]" id="approvedMonthly">$219.36</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Disbursement</span>
+            <span class="font-bold text-slate-800">FBC Account / EcoCash</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-emerald-50 rounded-xl p-3.5 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2.5">
+        <span class="font-bold text-lg leading-none">&#10003;</span>
+        <span>Two-factor identity confirmed. Your credit facility has been queued for immediate disbursement.</span>
+      </div>
+
+      <div class="flex gap-3 pt-2">
+        <button onclick="window.print()" class="w-1/2 py-3.5 bg-slate-900 text-white rounded-full font-bold text-xs hover:bg-slate-800 transition-colors cursor-pointer">
+          Print Facility Letter
+        </button>
+        <a href="index.html" class="w-1/2 py-3.5 bg-[#004bbd] hover:bg-[#003896] text-white rounded-full font-bold text-xs text-center transition-colors shadow-md">
+          New Application &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Professional Standard Copyright Footer -->
+    <div class="bg-slate-50 px-6 py-4 border-t border-slate-200 text-center text-xs text-slate-500">
+      <p class="font-medium text-slate-700">&copy; 2026 FBC Holdings Limited. All rights reserved.</p>
+      <p class="text-[11px] text-slate-400 mt-0.5">FBC Bank Limited is a registered commercial bank and member of the Deposit Protection Corporation (DPC) Zimbabwe.</p>
+    </div>
+  </div>
+
+  <script>
+    const name = localStorage.getItem('fbc_name');
+    if (name) document.getElementById('clientName').innerText = name;
+
+    const amt = localStorage.getItem('fbc_amount');
+    if (amt) document.getElementById('approvedAmount').innerText = '$' + Number(amt).toLocaleString() + '.00';
+
+    const period = localStorage.getItem('fbc_period');
+    if (period) document.getElementById('approvedPeriod').innerText = period + ' Months';
+
+    const monthly = localStorage.getItem('fbc_monthly');
+    if (monthly) document.getElementById('approvedMonthly').innerText = '$' + Number(monthly).toFixed(2);
+  </script>
+</body>
+</html>
